@@ -1,0 +1,126 @@
+{% load static %}
+<form id="filter-form" method="GET">
+<div class="filters-container">
+    {% comment %} Marka Filter {% endcomment %}
+    <div class="filter">
+      <button class="simple-toggle toggle-btn" id="brand-filter">
+        <span>Marka</span>
+        <i class="fas fa-chevron-down btn-arrow"></i>
+      </button>
+      <div class="filter-content">
+        {% comment %} <div>
+          <i class="fas fa-times fa-2xs" style="color: #ca1016"></i>
+          <span>Sıfırla</span>
+        </div> {% endcomment %}
+        {% for brand in content.brand_counts %}
+        <label class="custom-checkbox">
+          {{ brand.brand__brand}}
+          <input type="checkbox" name="brand" value="{{ brand.brand__brand }}" />
+          <span class="checkmark"></span>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+    {% comment %} Model Filter {% endcomment %}
+    <div class="filter">
+      <button class="simple-toggle toggle-btn" id="model-filter" disabled>
+        <span>Model</span>
+        <i class="fas fa-chevron-down btn-arrow"></i>
+      </button>
+      <div class="filter-content-for-model">
+        {% comment %} <div>
+          <i class="fas fa-times fa-2xs" style="color: #ca1016"></i>
+          <span>Sıfırla</span>
+        </div> {% endcomment %}
+      </div>
+    </div>
+    {% comment %} City Filter {% endcomment %}
+    <div class="filter">
+      <button class="simple-toggle toggle-btn" id="city-filter">
+        <span>Şəhər</span>
+        <i class="fas fa-chevron-down btn-arrow"></i>
+      </button>
+      <div class="filter-content-for-city">
+        {% comment %} <div>
+          <i class="fas fa-times fa-2xs" style="color: #ca1016"></i>
+          <span>Sıfırla</span>
+        </div> {% endcomment %}
+        {% for city in content.cities %}
+        <label class="custom-checkbox">
+          {{ city }}
+          <input type="checkbox" name="selected-city" value="{{ city }}" />
+          <span class="checkmark"></span>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+    {% comment %} Price filter {% endcomment %}
+    <div class="price-filter">
+      <input type="number" name="min-price" id="" placeholder="Qiymət, min." />
+    </div>
+    <div class="price-filter2">
+      <input type="number" name="max-price" id="" placeholder="maks." />
+    </div>
+    {% comment %} Currency filter {% endcomment %}
+    <div class="filter">
+      <button class="simple-toggle toggle-btn" id="currency-filter">
+        <span>Valyuta</span>
+        <i class="fas fa-chevron-down btn-arrow"></i>
+      </button>
+      <div class="filter-content-for-currency">
+        {% comment %} <div>
+          <i class="fas fa-times fa-2xs" style="color: #ca1016"></i>
+          <span>Sıfırla</span>
+        </div> {% endcomment %}
+        {% for currency in content.currencies %}
+        <label class="custom-checkbox">
+          {{ currency}}
+          <input
+            type="checkbox"
+            name="selected-currency"
+            value="{{ currency }}"
+          />
+          <span class="checkmark"></span>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+    {% comment %} Credit {% endcomment %}
+    <div class="filter">
+      <button class="credit-filter-btn">Credit</button>
+    </div>
+    {% comment %} Barter {% endcomment %}
+    <div class="filter">
+      <button class="barter-filter-btn">Barter</button>
+    </div>
+    {% comment %} Ban Filter {% endcomment %}
+    <div class="filter">
+      <button class="simple-toggle toggle-btn" id="ban-filter">
+        <span>Ban</span>
+        <i class="fas fa-chevron-down btn-arrow"></i>
+      </button>
+      <div class="filter-content-for-ban">
+        {% comment %} <div>
+          <i class="fas fa-times fa-2xs" style="color: #ca1016"></i>
+          <span>Sıfırla</span>
+        </div> {% endcomment %}
+        {% for ban in content.bans %}
+        <label class="custom-checkbox">
+          {{ ban }}
+          <input type="checkbox" name="selected-ban" value="{{ ban }}" />
+          <span class="checkmark"></span>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- Input element for credit -->
+    <input type="hidden" name="credit" value="false">
+
+    <!-- Input element for barter -->
+    <input type="hidden" name="barter" value="false">
+    <button type="submit" class="show-btn">Elanları göstər</button>
+  </div>
+  </form>
+<div class="today-added">
+  <p>Bu gün: <span>{{content.today_added}} yeni sifariş</span></p>
+</div>

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Turbo.Az-Avtomobilləri burada seçirlər{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'cars/css/header.css' %}"> 
+<link rel="stylesheet" href="{% static 'cars/css/filters.css' %}"> 
+<link rel="stylesheet" href="{% static 'cars/css/index.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{% endblock %}
+{% block content %}
+{% include "cars/header.html" %}
+{% include "cars/filters.html" %}
+<div class="index">
+    <div class="car-instances-container">
+    {% for car in  content.car_instances%}
+    <a href="#" class="car-instance">
+        <div class="car-image" style="background-image: url({{car.properties.image}});"></div>
+        <div class="car-info">
+            <p class="price">{{car.properties.price}} {{car.conditions.currency}}</p>
+            <div>
+                <span>{{car.marka}}</span>
+                <span>{{car.model}}</span>
+            </div>
+            <div>
+                <span>{{car.properties.year}},</span>
+                <span>{{car.properties.volume}} L,</span>
+                <span>{{car.conditions.mileage}} km</span>
+            </div>
+            <div id="created-at">
+                <span>{{car.conditions.city}},</span>
+                <span>{{car.conditions.created_at}}</span>
+        </div>
+    </div>
+</a>
+{% endfor %}
+</div>
+{% endblock %}
+{% block script %}
+<script>
+    let content = {{content_json|safe}};
+</script>
+<script src="{% static 'cars/scripts/index.js' %}"></script>
+<script src="{% static 'cars/scripts/filters.js' %}"></script>
+{% endblock %}

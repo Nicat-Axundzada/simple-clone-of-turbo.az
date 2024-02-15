@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heart-icon img {
+  width: 22px;
+  height: 14px;
+}
+
+.profile-icon img {
+  width: 40px;
+  height: 30px;
+}
+
+.header-top-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 194px;
+  margin-top: 15px;
+}
+
+.header-top-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.heart-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-top-container a {
+  text-decoration: none;
+  color: #8d94ad;
+}
+
+.header-top-container a:hover {
+  color: red;
+}
+
+.header-top-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-bottom-right img {
+  width: 15px;
+  height: 15px;
+}
+
+.header-bottom-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 60px;
+  background-color: #ca1016;
+  height: 70px;
+}
+
+.header-bottom-left {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-bottom-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-bottom-left a:first-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header-bottom-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: #7ed321;
+  color: white;
+  text-decoration: none;
+}
+
+.header-bottom-right p {
+  font-size: 18px;
+}

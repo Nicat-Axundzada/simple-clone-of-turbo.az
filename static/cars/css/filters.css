@@ -1,0 +1,150 @@
+.filters-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  background-color: #ebedf3;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+}
+
+.toggle-btn,
+.price-filter input,
+.price-filter2 input {
+  width: 235px;
+  height: 48px;
+  border: 1px solid #dfe3e9;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: #fff;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-btn span {
+  color: #8d94ad;
+  font-size: 15px;
+}
+
+.filter-content,
+.filter-content-for-model,
+.filter-content-for-city,
+.filter-content-for-currency,
+.filter-content-for-ban {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 12px;
+  background-color: #fff;
+  max-height: 235px; /* Set the maximum height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border-radius: 7px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  margin-top: 4px;
+  display: none;
+}
+
+.custom-checkbox {
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 232px;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: relative;
+  height: 22px;
+  width: 22px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #dfe3e9;
+}
+
+.checkmark:after {
+  content: "\f00c"; /* Checkmark (tick) icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: transparent;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  color: #ca1016;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.price-filter2 {
+  position: relative;
+  right: 12px;
+}
+.price-filter input {
+  border-radius: 0px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.price-filter2 input {
+  border-radius: 0px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.credit-filter-btn,
+.barter-filter-btn {
+  font-size: 15px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.today-added {
+  position: relative;
+  top: -24px;
+  left: 110px;
+}
+
+.today-added p span {
+  color: #4c88f9;
+}
+
+.show-btn {
+  border: none;
+  border-radius: 7px;
+  background-color: #ca1016;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  max-height: 48px;
+}
+
+button.selected {
+  background-color: #ffe6e5;
+  color: #ca1016;
+  border: 1px solid #ca1016;
+}
